@@ -1,0 +1,14 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-assertive">
+		<h1 class="title">选择用户意向楼盘</h1>
+		<div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+	</ion-header-bar>
+	<ion-content>
+		<ion-list>
+			<ion-checkbox ng-model="item.selected" ng-repeat="item in projects">{{ item.name }}</ion-checkbox>
+		</ion-list>
+		<div class="form-submit">
+			<button class="button button-assertive" ng-click="modal.hide()">提交</button>
+		</div>
+	</ion-content>
+</ion-modal-view>

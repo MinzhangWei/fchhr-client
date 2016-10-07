@@ -1,0 +1,36 @@
+<ion-view class="page-setting">
+	<ion-header-bar class="bar-assertive">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="goBack('home.profile')"></button>
+		</div>
+		<div class="h1 title">身份证认证</div>
+	</ion-header-bar>
+
+	<ion-content>
+		<div class="list">
+			<label class="item item-input">
+				<span class="input-label">真实姓名</span>
+				<input type="text" ng-model="form.realname" placeholder="输入身份证姓名">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">身份证号</span>
+				<input type="text" ng-model="form.id_card_num" placeholder="输入身份证号码">
+			</label>
+		</div>
+
+		<div class="list copy">
+			<label class="item item-input item-icon-right">
+				<span class="input-label">上传身份证正面照片</span>
+				<button class="button icon ion-ios-camera"></button>
+			</label>
+			<label class="item item-input item-icon-right">
+				<span class="input-label">上传身份证反面照片</span>
+				<button class="button icon ion-ios-camera"></button>
+			</label>
+		</div>
+
+		<div class="form-submit">
+			<button class="button button-assertive">保存</button>
+		</div>
+	</ion-content>
+</ion-view>

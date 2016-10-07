@@ -1,0 +1,27 @@
+<ion-view class="page-inviter">
+	<ion-header-bar class="bar-assertive">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="goBack('home.profile')"></button>
+		</div>
+		<div class="h1 title">我邀请的合伙人</div>
+		<div class="buttons">
+			<button class="button icon-left ion-ios-personadd button-icon" ui-sref="invitation"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list customer-list">
+			<div class="item item-input-inset list-searchbox">
+				<label class="item-input-wrapper">
+					<input type="text" placeholder="输入电话号码或姓名">
+				</label>
+				<button class="button button-icon icon ion-ios-search"></button>
+			</div>
+			<a class="item" ng-repeat="item in inviters">
+				{{ item.realname }}/{{ item.phone }}
+			</a>
+		</div>
+		<p class="intro"><strong>说明</strong></p>
+		<p class="intro">成功邀请好友注册成为房产合伙人，就有机会赢取奖励。</p>
+		<p class="intro">所邀请的合伙人，推荐客户成功购房，您也可以得到相应的佣金奖励。</p>
+	</ion-content>
+</ion-view>
