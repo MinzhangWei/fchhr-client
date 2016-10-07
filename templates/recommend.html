@@ -1,0 +1,53 @@
+<ion-view class="page-recommend">
+	<ion-header-bar class="bar-assertive">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="goBack('home.explore')"></button>
+		</div>
+		<div class="h1 title">推荐客户</div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list" ng-if="project">
+			<div class="item" ng-bind="project.title"></div>
+		</div>
+		<div class="list">
+			<label class="item item-input">
+				<span class="input-label">姓名</span>
+				<input type="text" ng-model="form.name" placeholder="输入意向客户姓名">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">手机</span>
+				<input type="text" ng-model="form.phone" placeholder="输入意向客户手机号码">
+			</label>
+			<label class="item item-input item-select">
+				<span class="input-label">性别</span>
+				<select>
+					<option>请选项客户性别</option>
+					<option>男</option>
+					<option>女</option>
+				</select>
+			</label>
+		</div>
+
+		<div class="list">
+			<label class="item item-input">
+				<textarea ng-model="form.intro" placeholder="客户描述说明，如客户意向类型、注意事项等"></textarea>
+			</label>
+		</div>
+
+		<div class="list" ng-if="!project">
+			<a class="item item-icon-left item-icon-right add-project" ng-click="addProject()">
+				<i class="icon ion-ios-plus-outline"></i>
+				添加意向楼盘
+				<i class="icon ion-ios-arrow-right"></i>
+			</a>
+			<li class="item item-button-right" ng-repeat="item in projects | selected">
+				{{ item.name }}
+				<button class="button button-icon icon ion-ios-close-outline" ng-click="removeProject(item)"></button>
+			</li>
+		</div>
+
+		<div class="form-submit">
+			<button class="button button-assertive">提交意向客户</button>
+		</div>
+	</ion-content>
+</ion-view>
