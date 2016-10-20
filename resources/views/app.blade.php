@@ -28,3 +28,9 @@
 		<ion-nav-view name="root-view"></ion-nav-view>
 	</body>
 </html>
+
+@foreach($templates as $view)
+<script id="app/templates/{{ $view }}.html" type="text/ng-template">
+	@include('app.templates.' . $view)
+</script>
+@endforeach

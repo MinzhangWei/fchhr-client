@@ -20,5 +20,14 @@
 // 	'password' => 'Auth\PasswordController',
 // ]);
 
-
+// mobile app
 Route::get('/m', 'AppController@index');
+
+// mobile app API
+Route::group(['prefix' => 'api/v1'], function()
+{
+	// 首页热门的项目
+	Route::get('projects/hot', 'ApiController@hotProjects');
+	// 我推荐的客户
+	Route::get('my/customers', 'ApiController@myCustomers');
+});

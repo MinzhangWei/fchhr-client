@@ -6,6 +6,9 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+use App\Models\Customer as Customer;
+use App\Models\Project as Project;
+
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
@@ -31,4 +34,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	public function customers () {
+		$projects = Project::simpleList();
+		$customers = $this->hasMany('App\Models\Customer', 'referrer_id')->orderBy('id', 'desc')->get();
+
+		foreach ($customers as $customer) {
+			$customer->projects;
+		}
+
+		return $customers;
+	}
 }

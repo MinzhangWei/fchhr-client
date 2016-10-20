@@ -5,11 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('HHR', ['ionic', 'HHR.controllers', 'HHR.routes', 'HHR.services', 'HHR.filters'])
 
-.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+.config(['$ionicConfigProvider','$interpolateProvider', function($ionicConfigProvider, $interpolateProvider) {
 
     // $ionicConfigProvider.scrolling.jsScrolling(false);
     // $ionicConfigProvider.views.transition('android');
     // $ionicConfigProvider.views.maxCache(0);
+    // $interpolateProvider.startSymbol('<%');
+    // $interpolateProvider.startSymbol('%>');
 }])
 
 .run(function($ionicPlatform) {
