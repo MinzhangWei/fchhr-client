@@ -19,7 +19,10 @@
 			<a class="item" ng-repeat="item in customers">
 				{{ item.name }} <span class="info">{{ item.phone }}</span>
 				<br />
-				<span class="info">{{ item.projects.join(', ') }}</span>
+				<span class="info">
+					<span ng-repeat="project in item.projects">{{ project.name }}</span>
+					<span class="d">,</span>
+				</span>
 				<span class="status">{{ item.status | customerStatus }}</span>
 			</a>
 		</div>

@@ -2,36 +2,36 @@
 
 	<ion-header-bar class="bar-assertive">
 		<div class="buttons">
-			<button class="button button-icon icon ion-ios-arrow-left" ng-click="goBack('home.explore')"></button>
+			<button class="button button-icon icon ion-ios-arrow-left"></button>
 		</div>
 		<div class="h1 title">项目详情</div>
 	</ion-header-bar>
 
 	<ion-content>
 		<div class="banner">
-			<img ng-src="{{ project.img }}">
+			<img ng-src="{{ project.image }}">
 		</div>
 		<div class="list" style="margin-top:0;">
-			<div class="item">{{ project.title }}</div>
+			<div class="item">{{ project.name }}</div>
 			<a class="item item-icon-left item-icon-right item-desc">
 				<i class="icon ion-ios-location-outline"></i>
-				五象新区核心区8号路与五象大道交汇处五象新区核心区8号路与五象大道交汇处
+				{{ project.address }}
 				<i class="icon ion-ios-arrow-right"></i>
 			</a>
 			<a class="item item-icon-left">
 				<i class="icon ion-ios-telephone-outline"></i>
 				拨打项目热线
-				<span class="item-note">400-1234-5678</span>
+				<span class="item-note">{{ project.phone }}</span>
 			</a>
 		</div>
 		<div class="list">
-			<a class="item item-icon-left item-icon-right" ng-click="goPage('projectCustomer')">
+			<a class="item item-icon-left item-icon-right" ng-click="authClick('projectCustomer', {projectId: project.id})">
 				<i class="icon ion-ios-people-outline"></i>
 				我推荐的客户
 				<span class="item-note">2人</span>
 				<i class="icon ion-ios-arrow-right"></i>
 			</a>
-			<a class="item item-icon-left item-icon-right" ng-click="goPage('recommend')">
+			<a class="item item-icon-left item-icon-right" ng-click="authClick('recommend', {projectId:project.id})">
 				<i class="icon ion-ios-personadd-outline"></i>
 				推荐客户
 				<span class="item-note">赢取高额佣金</span>

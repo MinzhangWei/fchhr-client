@@ -27,7 +27,23 @@ Route::get('/m', 'AppController@index');
 Route::group(['prefix' => 'api/v1'], function()
 {
 	// 首页热门的项目
-	Route::get('projects/hot', 'ApiController@hotProjects');
+	Route::get('projects/hot', 'ApiController@projectsHot');
+	// 所有项目
+	Route::get('projects/all', 'ApiController@projectsAll');
 	// 我推荐的客户
 	Route::get('my/customers', 'ApiController@myCustomers');
+	// 推荐客户
+	Route::any('new/customer', 'ApiController@newCustomer');
+
+	// project detail
+	Route::get('project/{id}', 'ApiController@projectDetail');
+	// user info
+	Route::get('user/info', 'ApiController@userInfo');
+	
+	// 注册新用户
+	Route::any('new/user', 'ApiController@newUser');
+	// 退出登录
+	Route::any('auth/logout', 'ApiController@authLogout');
+	// 密码登录
+	Route::any('auth/login/password', 'ApiController@authLoginPassword');
 });

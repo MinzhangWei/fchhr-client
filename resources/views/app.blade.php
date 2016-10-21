@@ -15,6 +15,7 @@
 
 		<!-- ionic/angularjs js -->
 		<script src="/app/lib/ionic/js/ionic.bundle.js"></script>
+		<script src="/app/components/qrcode.min.js"></script>
 
 		<!-- your app's js -->
 		<script src="/app/js/app.js"></script>
@@ -22,9 +23,10 @@
 		<script src="/app/js/routes.js"></script>
 		<script src="/app/js/services.js"></script>
 		<script src="/app/js/filters.js"></script>
+		<script src="/app/js/conf-constant.js"></script>
 	</head>
 
-	<body ng-app="HHR" ng-controller="rootCtrl">
+	<body ng-app="HHR" ng-controller="rootCtrl" ng-init="appInit({{ Auth::id() }})">
 		<ion-nav-view name="root-view"></ion-nav-view>
 	</body>
 </html>

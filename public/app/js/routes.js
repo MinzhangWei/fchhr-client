@@ -143,13 +143,13 @@ angular.module('HHR.routes', [])
 		})
 
 		.state('project', {
-			url: '/project',
+			url: '/project/:projectId',
 			views: {
 				'root-view': {
 					controller: 'projectCtrl',
 					templateUrl: 'app/templates/project.html',
 					params: {
-						data: null
+						projectId: null
 					}
 				}
 			}
